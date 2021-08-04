@@ -1,10 +1,10 @@
 /*
  * WebOSTVService
  * Connect SDK
- * 
+ *
  * Copyright (c) 2014 LG Electronics.
  * Created by Hyun Kook Khang on 19 Jan 2014
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -185,7 +185,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         }
         return CapabilityPriorityLevel.NOT_SUPPORTED;
     }
-    
+
     @Override
     public void setServiceDescription(ServiceDescription serviceDescription) {
         super.setServiceDescription(serviceDescription);
@@ -813,7 +813,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         request.send();
     }
 
-    public void setVolume(int volume) { 
+    public void setVolume(int volume) {
         setVolume(volume, null);
     }
 
@@ -1274,7 +1274,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
 
     @Override
     public void set3DEnabled(final boolean enabled, final ResponseListener<Object> listener) {
-        String uri; 
+        String uri;
         if (enabled)
             uri = "ssap://com.webos.service.tv.display/set3DOn";
         else
@@ -1314,7 +1314,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         ServiceCommand<State3DModeListener> request;
         if (isSubscription)
             request = new URLServiceSubscription<State3DModeListener>(this, uri, null, true, responseListener);
-        else 
+        else
             request = new ServiceCommand<State3DModeListener>(this, uri, null, true, responseListener);
 
         request.send();
@@ -1843,9 +1843,9 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         String _appId = webAppSession.launchSession.getAppId();
         String _idKey = null;
 
-        if (webAppSession.launchSession.getSessionType() == LaunchSession.LaunchSessionType.WebApp)
-            _idKey = "webAppId";
-        else
+        // if (webAppSession.launchSession.getSessionType() == LaunchSession.LaunchSessionType.WebApp)
+        //     _idKey = "webAppId";
+        // else
             _idKey = "appId";
 
         if (_appId == null || _appId.length() == 0) {
@@ -1945,7 +1945,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
             }
             return;
         }
-        
+
         String uri = "ssap://webapp/pinWebApp";
         JSONObject payload = new JSONObject();
 
@@ -1974,7 +1974,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
             }
         };
 
-        ServiceCommand<ResponseListener<Object>> request = 
+        ServiceCommand<ResponseListener<Object>> request =
                 new URLServiceSubscription<ResponseListener<Object>>(this, uri, payload, true, responseListener);
         request.send();
     }
@@ -2060,7 +2060,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         ServiceCommand<WebAppPinStatusListener> request;
         if (isSubscription)
             request = new URLServiceSubscription<WebAppPinStatusListener>(this, uri, payload, true, responseListener);
-        else 
+        else
             request = new ServiceCommand<WebAppPinStatusListener>(this, uri, payload, true, responseListener);
 
         request.send();
@@ -2198,7 +2198,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
     public void sendMessage(String message, LaunchSession launchSession, ResponseListener<Object> listener) {
         if (message != null && message.length() > 0) {
             sendMessage((Object) message, launchSession, listener);
-        } 
+        }
         else {
             Util.postError(listener, new ServiceCommandError(0, "Cannot send a null message", null));
         }
