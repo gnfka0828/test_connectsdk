@@ -1722,7 +1722,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         JSONObject payload = new JSONObject();
 
         try {
-            payload.put("webAppId", webAppId);
+            payload.put("appId", webAppId);
 
             if (params != null)
                 payload.put("urlParams", params);
@@ -1818,7 +1818,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         JSONObject payload = new JSONObject();
 
         try {
-            if (launchSession.getAppId() != null) payload.put("webAppId", launchSession.getAppId());
+            if (launchSession.getAppId() != null) payload.put("appId", launchSession.getAppId());
             if (launchSession.getSessionId() != null) payload.put("sessionId", launchSession.getSessionId());
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1950,7 +1950,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         JSONObject payload = new JSONObject();
 
         try {
-            payload.put("webAppId", webAppId);
+            payload.put("appId", webAppId);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -1992,7 +1992,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         JSONObject payload = new JSONObject();
 
         try {
-            payload.put("webAppId", webAppId);
+            payload.put("appId", webAppId);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -2033,7 +2033,7 @@ public class WebOSTVService extends WebOSTVDeviceService implements Launcher, Me
         JSONObject payload = new JSONObject();
 
         try {
-            payload.put("webAppId", webAppId);
+            payload.put("appId", webAppId);
         } catch (JSONException e) {
             e.printStackTrace();
         }
