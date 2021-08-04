@@ -1,0 +1,3 @@
+[submodule "Connect-SDK-Android-Core"]
+	path = Connect-SDK-Android-Core
+	url = https://github.com/ConnectSDK/Connect-SDK-Android-Core.git
