@@ -91,7 +91,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class WebOSTVService extends WebOSTVDeviceService implements Launcher, MediaPlayer, PlaylistControl, VolumeControl, TVControl, ToastControl, ExternalInputControl, MouseControl, KeyControl, TextInputControl, WebAppLauncher {
 
     public static final String ID = "webOS TV";
-    private static final String MEDIA_PLAYER_ID = "MediaPlayer";
+    //private static final String MEDIA_PLAYER_ID = "MediaPlayer";
+    private static final String MEDIA_PLAYER_ID = "com.webos.app.igallery";
 
     public interface SecureAccessTestListener extends ResponseListener<Boolean> { }
 
