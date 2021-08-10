@@ -191,7 +191,7 @@ public class WebOSTVServiceSocketClient extends WebSocketClient implements Servi
             state = State.CONNECTING;
         }
 
-        setupSSL();
+        //setupSSL();
 
         super.connect();
     }
